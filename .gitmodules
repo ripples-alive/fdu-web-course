@@ -1,0 +1,6 @@
+[submodule "composite"]
+	path = composite
+	url = /home/winkar/Documents/docker/otherWebs/composite
+[submodule "level3"]
+	path = level3
+	url = /home/winkar/Documents/docker/otherWebs/level3
