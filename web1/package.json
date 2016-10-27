@@ -1,0 +1,16 @@
+{
+  "name": "web01",
+  "version": "0.0.1",
+  "description": "Web 01",
+  "author": "chjuny@winkar.me",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0"
+  }
+}

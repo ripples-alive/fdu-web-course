@@ -1,0 +1,31 @@
+head
+    title This is not the best language
+body
+    h1 Welcome, Admin
+    script(src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js")
+    div(id="article1") 俭
+    div(id="article2") 慈
+    div(id="article3") 不敢为天下先
+    div(id="doc")
+
+script.
+    $("#article1").click(function(){
+        article = $.ajax({
+            url:"/article?id=1",
+            success:function(data) {
+            $("#doc").html(data);
+        }})
+    })
+    $("#article2").click(function(){
+        article = $.ajax({
+            url:"/article?id=2",
+            success:function(data) {
+            $("#doc").html(data);
+        }})    })
+    $("#article3").click(function(){
+        article = $.ajax({
+            url:"/article?id=3",
+            success:function(data) {
+            $("#doc").html(data);
+        }})
+    })
