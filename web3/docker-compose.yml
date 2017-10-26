@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: php:5-apache
+    ports:
+      - "30083:80"
+    command: "apache2-foreground"
+    volumes:
+      - ./src:/var/www/html
