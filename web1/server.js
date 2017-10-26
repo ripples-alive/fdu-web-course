@@ -8,7 +8,7 @@ const fs = require("fs")
 const morgan = require('morgan')
 
 
-const PORT = 10081
+const PORT = 30081
 const app = express()
 app.use(cookieParser())
 app.set('view engine', 'jade')
@@ -50,6 +50,7 @@ app.get("/", (req, res) => {
         var md5hash = cookie_value_decode.substring(cookie_value_decode.length - 32, cookie_value_decode.length)
         var value = cookie_value_decode.substring(0, cookie_value_decode.length - 32)
 
+        console.log('value: %s, md5: %s', value, md5hash)
         if (value == "true" && md5hash == md5("true")) {
             res.redirect("/admmmmmmmmmmmmmmmmmmmmin")
         } else {
@@ -69,6 +70,7 @@ app.get('/admmmmmmmmmmmmmmmmmmmmin', (req, res)=> {
 app.get('/article', (req, res) => {
     var article_numer = req.query.id
     var data = fs.readFileSync('article/'+article_numer)
+    res.setHeader('Content-Type', 'text/plain')
     if (data) {
         res.send(data)
     } else {
