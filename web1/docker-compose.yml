@@ -5,7 +5,5 @@ services:
     user: node
     environment:
       - NODE_ENV=production
-    volumes:
-      - .:/home/node/app
     ports:
       - "30081:30081"
