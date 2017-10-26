@@ -3,13 +3,14 @@ web:
     links:
         - db
     ports:
-        - "10080:80"
+        - "30082:80"
     volumes:
-        - ./src:/var/www/html
+        - ./src/sqlInjection3:/var/www/html
 db:
     image: mysql:5.6
     volumes:
         - ./db:/var/lib/mysql
+        - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     expose:
         - "3306"
     environment:

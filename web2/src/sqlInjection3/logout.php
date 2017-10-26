@@ -3,6 +3,6 @@
     session_start();
     // session_destroy();
     unset($_SESSION["username"]);
-    header("Location: /sqlInjection3");
+    header("Location: /");
     echo "Logged out";
 ?>

@@ -2,7 +2,7 @@
 error_reporting(E_ERROR | E_PARSE);
 session_start();
 if (isset($_SESSION["username"])) {
-  header("Location: /sqlInjection3/loggedIn.php");
+  header("Location: loggedIn.php");
 }
 ?>
 <head>
@@ -31,8 +31,8 @@ if (isset($_POST["username"])&&isset($_POST["password"])) {
     include("db.php");
     $sql = "SELECT * FROM CCC where username='$username'";
     $result=mysql_query($sql);
-    $row= mysql_fetch_row("$result");
-    if (!$row[1] || $row[1]!=$password) {
+    $row= mysql_fetch_row($result);
+    if (empty($row)) {
         $update_sql = "INSERT into CCC values('$username', '$password')";
         $result = mysql_query($update_sql);
         if ($result ) {

@@ -2,7 +2,7 @@
 session_start();
 error_reporting(E_ERROR | E_PARSE);
 if (isset($_SESSION["username"])) {
-  header("Location: /sqlInjection3/loggedIn.php");
+  header("Location: loggedIn.php");
 }
 
 if (isset($_POST["username"])&&isset($_POST["password"])) {
@@ -21,7 +21,7 @@ if (isset($_POST["username"])&&isset($_POST["password"])) {
         } else {
             $_SESSION['username']=$username;
             // echo var_dump($_SESSION);
-            header("Location: /sqlInjection3/loggedIn.php");
+            header("Location: loggedIn.php");
         }
 }
 ?>
@@ -46,4 +46,4 @@ if (isset($_POST["username"])&&isset($_POST["password"])) {
     </div
 ></form>
 
-<form action="/sqlInjection3/register.php"><input type="submit" value="注册"/></form>
+<form action="register.php"><input type="submit" value="注册"/></form>

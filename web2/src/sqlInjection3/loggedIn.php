@@ -10,10 +10,10 @@ session_start();
   // echo var_dump($_SESSION);
   if (isset($_SESSION["username"])) {
     ?>
-    <form action="/sqlInjection3/resetPassword.php">
+    <form action="resetPassword.php">
         <input type="submit" value="重置密码"/>
     </form>
-    <form action="/sqlInjection3/logout.php">
+    <form action="logout.php">
         <input type="submit" value="登出"/>
     </form>
     <?php
