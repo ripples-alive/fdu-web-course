@@ -40,7 +40,7 @@
         <div class="">
           JPEG wanted
         </div>
-        <form action="level7.php" method="post"
+        <form action="index.php" method="post"
         enctype="multipart/form-data">
         <label for="file">Filename:</label>
         <input type="file" name="file" id="file" />

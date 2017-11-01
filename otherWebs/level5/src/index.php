@@ -16,13 +16,13 @@
        $username = $_POST["user"];
        $password = $_POST["password"];
        include("db.php");
-       $sql = "SELECT * FROM bbb WHERE username='$username' and password='password'";
+       $sql = "SELECT * FROM CCC WHERE username='$username' and password='password'";
        $result = mysql_query($sql);
        $row = mysql_fetch_row($result);
        if (!$row) {
          echo("Wrong username or password<br>");
          ?>
-         <form  action="level5.php" method="post">
+         <form  action="index.php" method="post">
            <input type="text" name="user">
            <input type="password" name="password">
            <input type="submit" name="submit" value="submit">
@@ -35,7 +35,7 @@
        }
      } else {
        ?>
-       <form  action="level5.php" method="post">
+       <form  action="index.php" method="post">
          <input type="text" name="user">
          <input type="password" name="password">
          <input type="submit" name="submit" value="submit">

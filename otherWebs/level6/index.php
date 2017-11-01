@@ -20,7 +20,7 @@
       if ($ext!="torrent") {
         echo("invalid filename");
         ?>
-        <form  action="level6.php" method="post">
+        <form  action="" method="post">
           <input type="text" name="torrent">
           <input type="submit" name="submit" value="submit">
         </form>
@@ -28,13 +28,13 @@
         <?php
         exit();
       }
-      $cmd = "/usr/bin/wget \"$torrent\"  2>&1";
+      $cmd = "/usr/bin/curl \"$torrent\"  2>&1";
       $retval = -123;
       exec("$cmd");
       echo "Torrent downloaded<br>";
 
       ?>
-      <form  action="level6.php" method="post">
+      <form  action="" method="post">
         <input type="text" name="torrent">
         <input type="submit" name="submit" value="submit">
       </form>
@@ -42,7 +42,7 @@
       <?php
      } else {
        ?>
-       <form  action="level6.php" method="post">
+       <form  action="" method="post">
          <input type="text" name="torrent">
          <input type="submit" name="submit" value="submit">
        </form>

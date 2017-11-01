@@ -1,0 +1,76 @@
+version: '3'
+services:
+  level0:
+    image: php:5-apache
+    volumes:
+      - ./level0:/var/www/html:ro
+    ports:
+      - 60000:80
+  level1:
+    image: php:5-apache
+    volumes:
+      - ./level1:/var/www/html:ro
+    ports:
+      - 60001:80
+  level2:
+    image: php:5-apache
+    volumes:
+      - ./level2:/var/www/html:ro
+    ports:
+      - 60002:80
+  # level3:
+  #   image: php:5-apache
+  #   volumes:
+  #     - ./level3:/var/www/html:ro
+  #   ports:
+  #     - 60003:80
+  level4:
+    image: php:5-apache
+    volumes:
+      - ./level4:/var/www/html:ro
+    ports:
+      - 60004:80
+  level5:
+    build: level5
+    links:
+      - level5-db:mysql
+    volumes:
+      - ./level5/src:/var/www/html:ro
+    ports:
+      - 60005:80
+  level5-db:
+    image: mysql:5.6
+    volumes:
+        - ./level5/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    expose:
+        - "3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: "********"
+        MYSQL_USER: bbb
+        MYSQL_DATABASE: aaa
+        MYSQL_PASSWORD: ccc
+  level6:
+    image: php:5-apache
+    volumes:
+      - ./level6:/var/www/html:ro
+    ports:
+      - 60006:80
+  level7:
+    image: php:5-apache
+    volumes:
+      - ./level7/index.php:/var/www/html/index.php
+      - ./level7/upload:/var/www/html/upload
+    ports:
+      - 60007:80
+  level8:
+    image: php:5-apache
+    volumes:
+      - ./level8:/var/www/html
+    ports:
+      - 60008:80
+  level9:
+    image: php:5-apache
+    volumes:
+      - ./level9:/var/www/html:ro
+    ports:
+      - 60009:80

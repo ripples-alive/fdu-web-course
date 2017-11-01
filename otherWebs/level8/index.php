@@ -19,7 +19,7 @@
       //  echo $_POST["advice"];
        echo "Submit success, waiting for administrator to read";
        ?>
-       <form class="" action="level8.php" method="post">
+       <form class="" action="index.php" method="post">
         <input type="text" name="advice" placeholder="advice here">
         <input type="submit">
        </form>
@@ -27,7 +27,7 @@
      } else {
        ?>
        <em>Any advice for administrator?</em>
-       <form class="" action="level8.php" method="post">
+       <form class="" action="index.php" method="post">
         <input type="text" name="advice" placeholder="advice here">
         <input type="submit">
        </form>
