@@ -15,5 +15,5 @@ $key = 'code-' . $_POST['mobile'];
 $_SESSION[$key] = rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
 $_SESSION["$key-time"] = time();
 
-// echo '{"msg":"success"}';
-echo '{"msg":"'.$_SESSION[$key].'"}';
+echo '{"msg":"success"}';
+// echo '{"msg":"'.$_SESSION[$key].'"}';
