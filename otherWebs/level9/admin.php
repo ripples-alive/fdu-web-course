@@ -23,7 +23,7 @@
     <br/> 手机号：
     <input name="mobile" id="mobile" type="text" class="input" value="<?php echo $_POST['mobile'] ?>" />
     <br/> 验证码：
-    <input name="code" id="code" type="text" class="input" value="" />
+    <input name="code" id="code" type="text" class="input" value="" maxlength=4 />
     <br/>
     <button id="sms-btn"/>发送短信</button>
     <input type="submit" name="submit" value="登录" />
