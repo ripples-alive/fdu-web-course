@@ -11,7 +11,7 @@
        include("db.php");
        $username = str_ireplace("union", "", $username);
        $username = str_ireplace(" ", "", $username);
-       $sql = "SELECT * FROM ddd WHERE username='$username'";
+       $sql = "SELECT * FROM ccc WHERE username='$username'";
        $result = mysql_query($sql);
        //if (!$result) {
        // die(mysql_errno().":".mysql_error()."\n");

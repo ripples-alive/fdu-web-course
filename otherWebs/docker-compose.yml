@@ -74,3 +74,41 @@ services:
       - ./level9:/var/www/html:ro
     ports:
       - 60009:80
+  level10:
+    build: level10
+    links:
+      - level10-db:mysql
+    volumes:
+      - ./level10/src:/var/www/html:ro
+    ports:
+      - 60010:80
+  level10-db:
+    image: mysql:5.6
+    volumes:
+        - ./level10/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    expose:
+        - "3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: "********"
+        MYSQL_USER: bbb
+        MYSQL_DATABASE: aaa
+        MYSQL_PASSWORD: ccc
+  level11:
+    build: level11
+    links:
+      - level11-db:mysql
+    volumes:
+      - ./level11/src:/var/www/html:ro
+    ports:
+      - 60011:80
+  level11-db:
+    image: mysql:5.6
+    volumes:
+        - ./level11/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    expose:
+        - "3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: "********"
+        MYSQL_USER: bbb
+        MYSQL_DATABASE: aaa
+        MYSQL_PASSWORD: ccc
