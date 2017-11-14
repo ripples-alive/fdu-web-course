@@ -18,12 +18,12 @@ services:
       - ./level2:/var/www/html:ro
     ports:
       - 60002:80
-  # level3:
-  #   image: php:5-apache
-  #   volumes:
-  #     - ./level3:/var/www/html:ro
-  #   ports:
-  #     - 60003:80
+  level3:
+    image: php:5-apache
+    volumes:
+      - ./level3/git:/var/www/html/.git:ro
+    ports:
+      - 60003:80
   level4:
     image: php:5-apache
     volumes:
